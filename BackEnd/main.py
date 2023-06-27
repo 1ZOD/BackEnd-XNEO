@@ -1,5 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from service.insert.insert_service import Insert
+from service.select.select_service import Select
 from config.__db import configure_mysql
 
 app = Flask(__name__)
@@ -17,12 +18,24 @@ def handle_exception(error):
 
 @app.route('/')
 def home():
-    return 'Back End Rodando!'
+    return 'BackEnd Rodando!'
 
 
-@app.route('/teste')
-def index():
+@app.route('/listar-tarefas')
+def list():
     try:
+        data = Select(mysql).get_All()
+        return jsonify(data), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
+
+@app.route('/registrar-tarefa', methods=['POST'])
+def register():
+    try:
+        body = request["body"]
+        print(body)
+
         data = Insert(mysql).get_All()
         return jsonify(data), 200
     except Exception as e:
