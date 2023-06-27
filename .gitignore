@@ -15,7 +15,7 @@ virtualenv/
 .virtualenv
 venv
 .venv
-
+.env
 
 # Dependency modules
 node_modules
