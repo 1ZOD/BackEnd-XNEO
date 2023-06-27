@@ -1,0 +1,31 @@
+# Python
+# Byte-compiled / optimized / DLL files
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# vs code
+.vscode
+.vs
+.trash
+
+# virtual environments
+virtualenv/
+.virtualenv
+venv
+.venv
+
+
+# Dependency modules
+node_modules
+
+
+# Mac
+.DS_Store
+
+# ide config folder
+.idea
+
+# SQL Dumps
+*.sql
