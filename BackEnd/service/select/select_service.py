@@ -5,7 +5,7 @@ class Select:
     def __init__(self,mysql):
         self.mysql = mysql
         
-    def get_All(self):
+    def getAll(self):
         cursor = self.mysql.get_db().cursor()
         query = "SELECT * FROM tasks"
         cursor.execute(query)
