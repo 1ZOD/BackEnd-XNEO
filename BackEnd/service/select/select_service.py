@@ -7,7 +7,8 @@ class Select:
         
     def get_All(self):
         cursor = self.mysql.get_db().cursor()
-        cursor.execute("SELECT * FROM tasks")
+        query = "SELECT * FROM tasks"
+        cursor.execute(query)
         data = cursor.fetchall()
         cursor.close()
 

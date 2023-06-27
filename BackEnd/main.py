@@ -33,11 +33,10 @@ def list():
 @app.route('/registrar-tarefa', methods=['POST'])
 def register():
     try:
-        body = request["body"]
-        print(body)
-
-        data = Insert(mysql).get_All()
-        return jsonify(data), 200
+        body = request.get_json()
+        task_content = body['task_content'] 
+        Insert(mysql).post_task(task_content)
+        return jsonify("OK"), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
