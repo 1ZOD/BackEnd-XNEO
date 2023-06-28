@@ -4,8 +4,10 @@ from service.select.select_service import Select
 from service.delete.delete_service import Delete
 from service.update.update_service import Update
 from config.__db import configure_mysql
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 mysql = configure_mysql(app)
 
 @app.errorhandler(404)
