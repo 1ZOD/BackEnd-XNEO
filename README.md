@@ -37,7 +37,7 @@ Exemplo:
 ```sh
 BD_HOST=localhost
 BD_USER=root
-BD_PASSWAOR=admin
+BD_PASSWORD=admin
 BD_TABLE=Tarefas
 ```
 
