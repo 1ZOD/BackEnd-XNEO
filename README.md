@@ -42,3 +42,20 @@ BD_TABLE=Tarefas
 ```
 
 Mude apenas o necessario como por exemplo "root"
+
+
+## 5° Passo
+
+Criar o banco
+
+```sh
+create database Tarefas
+```
+
+```sh
+create table tasks(
+id_task int not null AUTO_INCREMENT,
+task_content varchar(30) not null,
+PRIMARY KEY(id_task)
+)default charset = utf8
+```
